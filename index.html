@@ -35,25 +35,15 @@
   <slide>
     <hgroup>
       <h2>Invoicing</h2>
-      <h3>Existing solutions</h3>
+      <h3>Existing solutions and differences</h3>
     </hgroup>
     <article>
       <ul>
-        <li>
-          <h4>Centrum Faktur, iFirma, …</h4>
-        </li>
-        <li>
-          <h4>Faktura / Faktura VAT</h4>
-        </li>
-        <li>
-          <h4>Original / Copy</h4>
-        </li>
-        <li>
-          <h4>no VAT information / VAT not applicable</h4>
-        </li>
-        <li>
-          <h4>Date of delivery / Date of sale</h4>
-        </li>
+        <li>Centrum Faktur, iFirma, …</li>
+        <li>Faktura / Faktura VAT</li>
+        <li>Original / Copy</li>
+        <li>no VAT information / VAT not applicable</li>
+        <li>Date of delivery / Date of sale</li>
       </ul>
     </article>
   </slide>
@@ -65,18 +55,10 @@
     </hgroup>
     <article>
       <ul>
-        <li>
-          <h4>Ember.js, media print</h4>
-        </li>
-        <li>
-          <h4>Serverless</h4>
-        </li>
-        <li>
-          <h4>GitHub pages</h4>
-        </li>
-        <li>
-          <h4>CDN + SSL</h4>
-        </li>
+        <li>Ember.js, <code>@media print { … }</code></li>
+        <li>Serverless</li>
+        <li>GitHub pages</li>
+        <li>CDN + SSL</li>
       </ul>
     </article>
   </slide>
@@ -100,15 +82,9 @@
     </hgroup>
     <article>
       <ul>
-        <li>
-          <h4>Foreign currency exchange rate must be included</h4>
-        </li>
-        <li>
-          <h4>A day before the issue date (or a first business day before that)</h4>
-        </li>
-        <li>
-          <h4>National Bank of Poland</h4>
-        </li>
+        <li>Foreign currency exchange rate must be included</li>
+        <li>A day before the issue date (or a first business day before that)</li>
+        <li>National Bank of Poland</li>
       </ul>
     </article>
   </slide>
@@ -120,14 +96,10 @@
     </hgroup>
     <article>
       <ul>
+        <li>CORS (or at least JSONP)</li>
+        <li>SSL</li>
         <li>
-          <h4>CORS (or at least JSONP)</h4>
-        </li>
-        <li>
-          <h4>SSL</h4>
-        </li>
-        <li>
-          <h4>API?</h4>
+          API?
           <br>
           <img src="images/nbp.png" alt="NPB API">
         </li>
@@ -189,9 +161,9 @@
         <li>commercial use weirdness</li>
         <li>robots.txt</li>
         <li>2,000 calls per hour per IP</li>
-        <li>up to 1.5mb in a single request</li>
+        <li>up to 1.5 MB in a single request</li>
         <li>5,000 "records" per request</li>
-        <li>queries must complete in less than 30s</li>
+        <li>queries must complete in less than 30 s</li>
       </ul>
     </article>
   </slide>
@@ -202,13 +174,73 @@
       <h3>Fetching exchange rates</h3>
     </hgroup>
     <article>
-      <ul>
       <pre class="prettyprint" data-lang="sql">
 
 SELECT * FROM csv(0, 5000) WHERE url="http://www.nbp.pl/kursy/xml/dir.txt";
 SELECT * FROM xml WHERE url="http://www.nbp.pl/kursy/xml/a041z140228.xml";
+SELECT * FROM xml WHERE url="http://www.nbp.pl/kursy/xml/LastA.xml";
       </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Yahoo! Query Language</h2>
+      <h3>AJAX</h3>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="javascript">
+
+$.ajax("https://query.yahooapis.com/v1/public/yql", {
+    data: {
+        format: "json",
+        q: "SELECT * FROM xml WHERE url=…"
+    }
+}).then(function (response) {
+    console.log(response.query.results);
+});
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Yahoo! Query Language</h2>
+      <h3>There is more!</h3>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Open Data tables</li>
+        <li>Sub-selects</li>
+        <li>Filtering</li>
+        <li>Paging</li>
+        <li><code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code> statements (authorization)</li>
       </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Open Data Tables</h2>
+      <h3>Pull request driven APIs</h3>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="sql">
+SHOW tables;
+
+SELECT * FROM hackernews.story WHERE id = "1160643";
+SELECT * FROM steam.community.player.profile WHERE id = "76561197968575517";
+SELECT * FROM spotify.search.artist WHERE artist = "Alt-J";
+SELECT * FROM nbp.exchangeRates WHERE date = "2014-02-14" AND type = "A"; // TODO
+      </pre>
+      GitHub project: <a href="https://github.com/yql/yql-tables">https://github.com/yql/yql-tables</a>
+    </article>
+  </slide>
+
+  <slide>
+    <article class="flexbox vcenter">
+      <h1>Questions?</h1>
+      <h3>Suggestions? Similar services?</h3>
     </article>
   </slide>
 
