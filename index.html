@@ -153,6 +153,7 @@
   <slide>
     <hgroup>
       <h2>Yahoo! Pipes</h2>
+      <h3>Features</h3>
     </hgroup>
     <article>
       <ul>
@@ -166,6 +167,7 @@
   <slide>
     <hgroup>
       <h2>Yahoo! Query Language</h2>
+      <h3>Features</h3>
     </hgroup>
     <article>
       <ul>
@@ -194,7 +196,21 @@
     </article>
   </slide>
 
+  <slide>
+    <hgroup>
+      <h2>Yahoo! Query Language</h2>
+      <h3>Fetching exchange rates</h3>
+    </hgroup>
+    <article>
+      <ul>
+      <pre class="prettyprint" data-lang="sql">
 
+SELECT * FROM csv(0, 5000) WHERE url="http://www.nbp.pl/kursy/xml/dir.txt";
+SELECT * FROM xml WHERE url="http://www.nbp.pl/kursy/xml/a041z140228.xml";
+      </pre>
+      </ul>
+    </article>
+  </slide>
 
   <slide class="fill nobackground" style="background-image: url(images/meetjs_logo.png)"></slide>
 
