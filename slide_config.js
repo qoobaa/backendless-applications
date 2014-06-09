@@ -1,11 +1,11 @@
 var SLIDE_CONFIG = {
     // Slide settings
     settings: {
-        title: "Creating API with YQL",
-        subtitle: "When no API available",
+        title: "Automated Testing Story",
+        subtitle: "",
         eventInfo: {
-            title: "meet.js Katowice",
-            date: "05/03/2014"
+            title: "SRUG, Gliwice",
+            date: "13/06/2014"
         },
         useBuilds: true, // Default: true. False will turn off slide animation builds.
         usePrettify: true, // Default: true
