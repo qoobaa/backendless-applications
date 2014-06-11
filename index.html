@@ -28,7 +28,139 @@
 
   <slide>
     <article class="flexbox vcenter">
-      <h1>Testing</h1>
+      <h1>Let's get back to 2007</h1>
+    </article>
+  </slide>
+
+  <slide>
+    <article class="flexbox vcenter">
+      <h1>Rails has a <code>test</code> folder</h1>
+    </article>
+  </slide>
+
+  <slide>
+    <article class="flexbox vcenter">
+      <h1>RSpec aka BDD</h1>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h1>RSpec aka BDD</h1>
+    </hgroup>
+    <article>
+      <p>Mateusza Drożdżyński's Blog<br>May 20, 2007</p>
+      <pre class="prettyprint" data-lang="ruby">
+describe Game do
+  before(:each) do
+    @game = Game.new
+  end
+
+  it "should score 0 for gutter game" do
+    1.upto(20) { @game.hit(0) }
+    @game.score.should == 0
+  end
+end</pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h1>RSpec</h1>
+    </hgroup>
+    <article>
+      <ul>
+        <li>use Ruby superpower - DSLs</li>
+        <li>well organized tests - contexts</li>
+        <li>DRY tests</li>
+        <li>readable tests</li>
+        <li>avoid mistakes with writing <code>assert 1, a</code> instead of <code>assert_equal 1, a</code></li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h1>RSpec Reality</h1>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="ruby">
+describe Order do
+  # (…) 200 lines of code, 6 nested contexts
+              context "deliver" do
+                it "should change state respectively"
+                  # DSL FTW!
+                  order.should not_be_pending
+                  order.items.count == 1
+                end
+              end
+  # 200 more lines (…)
+end</pre>
+      <ul>
+        <li>very deeply nested contexts</li>
+        <li>DSL confusion</li>
+        <li><code>shared_example</code>, <code>behave_like</code>, <code>expect</code>, <code>let</code>, <code>let!</code>, <code>subject</code></li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h1>RSpec Legacy</h1>
+    </hgroup>
+    <article>
+      <p>Let's make tests blazing fast!</p>
+      <pre class="prettyprint" data-lang="ruby">
+Order.stub(:find).and_return(…)
+Order.any_instance.stub(:items).and_return([…])</pre>
+    </article>
+  </slide>
+
+  <slide>
+    <article class="flexbox vcenter">
+      <h1>Cucumber aka SDD</h1>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h1>Cucumber aka SDD</h1>
+    </hgroup>
+    <article>
+      <pre>
+Scenario: Articles List
+  Given I have articles titled Pizza, Breadsticks
+  When I go to the list of articles
+  Then I should see "Pizza"
+  And I should see "Breadsticks"</pre>
+      <ul>
+        <li>documentation that client can easily read and understand</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h1>Cucumber Reality (feat. Pickle)</h1>
+    </hgroup>
+    <article>
+      <pre>
+Given a user exists
+And another user exists with role: "admin"
+# later
+Then a user should exist with name: "Fred"
+And that user should be activated # this uses rspec predicate matchers
+Scenario: Articles List</pre>
+      <ul>
+        <li>capybara fine grained steps (click on, fill in, …)</li>
+        <li>bunch of step files filled with regular expressions (<code>git grep</code> anyone?)</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <article class="flexbox vcenter">
+      <h1>CAN HAS QUESTION?</h1>
     </article>
   </slide>
 
