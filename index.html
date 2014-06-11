@@ -75,6 +75,7 @@ end</pre>
         <li>DRY tests</li>
         <li>readable tests</li>
         <li>avoid mistakes with writing <code>assert 1, a</code> instead of <code>assert_equal 1, a</code></li>
+        <li>write <code>spec</code>s, not <code>test</code>s</li>
       </ul>
     </article>
   </slide>
@@ -154,6 +155,39 @@ Scenario: Articles List</pre>
       <ul>
         <li>capybara fine grained steps (click on, fill in, …)</li>
         <li>bunch of step files filled with regular expressions (<code>git grep</code> anyone?)</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h1>Other tools</h1>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Shoulda</li>
+        <li>Spinach - Spinach is a BDD framework on top of Gherkin</li>
+        <li>Steak - delicious combination of RSpec and Capybara for Acceptance BDD</li>
+        <li>BBQ - Object oriented acceptance testing</li>
+        <li>Coulda - Behaviour Driven Development derived from Cucumber but as an internal DSL with methods for reuse</li>
+        <li>Filet - Extension for Test::Unit to have a Steak-like DSL for acceptance testing</li>
+        <li>Bacon - Bacon is a small RSpec clone weighing less than 350 LoC</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h1>Other tools 2</h1>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Wrong - Wrong provides a general assert method that takes a predicate block</li>
+        <li>Riot - An extremely fast, expressive, and context-driven unit-testing framework. A replacement for all other testing frameworks</li>
+        <li>Shindo - Work with your tests, not against them</li>
+        <li>mustard - Simple "must" expectations for tests and specs in Ruby.</li>
+        <li>Minitest - minitest provides a complete suite of testing facilities supporting TDD, BDD, mocking, and benchmarking</li>
+        <li>many, many more…</li>
       </ul>
     </article>
   </slide>
