@@ -29,6 +29,8 @@ class: center, middle
 
 # RSpec aka BDD
 
+Mateusz Drożdżyński, http://matid.net, 20.05.2007
+
 ```ruby
 describe Game do
   before(:each) do
