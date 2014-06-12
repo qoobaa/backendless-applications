@@ -157,8 +157,12 @@ h1, h2, h3 {
     font-family: Alfios;
 }
 
-.remark-code,
 .remark-inline-code {
+    font-family: Inconsolata;
+    font-size: 28px;
+}
+
+.remark-code {
     font-family: Inconsolata;
     font-size: 24px;
 }

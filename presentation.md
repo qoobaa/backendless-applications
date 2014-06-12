@@ -79,7 +79,7 @@ end
 
 # RSpec Legacy
 
-Let's make tests blazing fast!
+Let's make tests **blazing fast**!
 
 ```ruby
 Order.stub(:find).and_return(…)
@@ -115,7 +115,7 @@ Given a user exists
 And another user exists with role: "admin"
 # later
 Then a user should exist with name: "Fred"
-And that user should be activated # this uses rspec predicate matchers
+And that user should be activated # rspec matchers
 Scenario: Articles List
 ```
 
@@ -235,6 +235,7 @@ end
 # Apipie
 
 * autogenerate and organize examples from your controller tests
+* params validation
 
 ```ruby
 resource_description do
@@ -251,3 +252,9 @@ end
 ---
 
 background-image: url(images/apipie.png)
+
+---
+
+class: center, middle
+
+# Questions?
