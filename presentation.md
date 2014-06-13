@@ -152,7 +152,8 @@ many, many more…
 
 class: center, middle
 
-# It is 2014, TDD is dead
+# It is 2014
+# TDD is dead
 
 ---
 
