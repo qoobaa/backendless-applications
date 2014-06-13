@@ -21,6 +21,14 @@ class: center, middle
 
 ---
 
+# …And Subfolders
+
+* **unit** tests
+* **functional** tests
+* **integration** tests
+
+---
+
 class: center, middle
 
 # RSpec aka BDD
