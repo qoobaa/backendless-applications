@@ -81,7 +81,7 @@ Worth to mention: authentication, authorization.
 
 ---
 
-# Read-Only Public Data
+# Reading Public Data
 
 * CORS Proxies
 * YQL
@@ -118,10 +118,10 @@ accessing services with private API keys.
 
 # "Backendless" Drawbacks
 
-* not for everything
+* not for everyone
 * hard to replace dependencies
 * testing is tough
-* vulnerable to API changes
+* application is vulnerable to API changes
 * might also be expensive - especially AWS
 
 ---
