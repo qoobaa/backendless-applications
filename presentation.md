@@ -121,7 +121,7 @@ accessing services with private API keys.
 * not for everyone
 * hard to replace dependencies
 * testing is tough
-* application is vulnerable to API changes
+* application is susceptible to API changes
 * might also be expensive - especially AWS
 
 ---
