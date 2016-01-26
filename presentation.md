@@ -1,7 +1,7 @@
 class: center, middle
 
 # YANB Architecture
-## aka you ain't need no backend
+## aka: you ain't need no backend
 ## Kuba Kuźma
 
 Silesian Ruby Users Group
