@@ -129,4 +129,5 @@ accessing services with private API keys.
 
 class: center, middle
 
-# Questions?
+# ¡Muchas gracias!
+# ¿Hay preguntas?
