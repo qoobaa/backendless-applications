@@ -26,7 +26,7 @@ class: center, middle
 
 # Backend Hosting
 
-* Shared Hosting (i.e. rootnode)
+* Shared Hosting
 * Dedicated Hosting (i.e. OVH)
 * Virtual Private Servers (i.e. Digital Ocean)
 * Virtual Private Clouds (i.e. EC2)
