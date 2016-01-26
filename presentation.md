@@ -48,7 +48,7 @@ How do you scale?
 class: center, middle
 
 # "Backendless" Application
-![Serverless Diagram](images/serverless.png)
+![Serverless Diagram](images/backendless.png)
 
 ---
 
@@ -119,7 +119,9 @@ accessing services with private API keys.
 # "Backendless" Drawbacks
 
 * not for everything
+* hard to replace dependencies
 * testing is tough
+* vulnerable to API changes
 * might also be expensive - especially AWS
 
 ---
