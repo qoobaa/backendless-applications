@@ -20,7 +20,7 @@ class: center, middle
 
 # Traditional Web Application
 
-![RoR Diagram](/images/ror.png)
+![RoR Diagram](images/ror.png)
 
 ---
 
@@ -48,7 +48,7 @@ How do you scale?
 class: center, middle
 
 # "Backendless" Application
-![Serverless Diagram](/images/serverless.png)
+![Serverless Diagram](images/serverless.png)
 
 ---
 
