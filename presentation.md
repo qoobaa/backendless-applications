@@ -54,7 +54,8 @@ class: center, middle
 
 # "Backendless" Benefits
 
-* easy, super fast hosting - CDN (i.e. Cloudflare)
+* dead easy hosting (i.e. GitHub Pages)
+* super fast - CDN (i.e. Cloudflare)
 * high availability
 * DDoS protection
 * SSL
